@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marcus S E-Porfolio</title>
+    <link rel="stylesheet" href="styel.css">
+    <script src="https://kit.fontawesome.com/c8e4d183c2.js" crossorigin="anonymous"></script>
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init(
+        "mHkzZmhsV--t46oI0"
+      );
+   })();
+</script>
+<script src="index.js"></script>
+</head>
+<body>
+    <section id="landing-page" onmousemove="moveBackground(event)">
+        <nav>
+            <div class="logo__container">
+                <h1 class="logo">MS</h1>
+            </div>
+            <ul class="nav__link--list">
+                <li class="nav__link" onclick="toggleModal()">
+                    <a href="#" class="
+                    nav__link--anchor
+                    link__hover-effect
+                    link__hover-effect--black">About</a>
+                </li>
+                <li class="nav__link">
+                    <a href="#projects" class="
+                    nav__link--anchor
+                    link__hover-effect
+                    link__hover-effect--black">Projects</a>
+                </li>
+                <li class="nav__link" onclick="toggleModal()">
+                    <a href="#" class="
+                    nav__link--anchor
+                    link__hover-effect
+                    link__hover-effect--black">Contact</a>
+                </li>
+                <li class="nav__link click">
+                    <a href="#" class="
+                    nav__link--anchor
+                    link__hover-effect
+                    link__hover-effect--black
+                    "><i class="fas fa-adjust" onclick="toggleContrast()"></i></a>
+                </li>
+            </ul>
+        </nav>
+        <header class="header">
+            <div class="header__content">
+                <h1 class="title">Hey</h1>
+                <h1 class="title green ">I'm Marcus. </h1>
+                <p class="header__para">
+                    I'm a beginner <b class="green">Frontend Software Developer</b> with an emence passion for building new things for people to see
+                    and to provideit with a great experiance as well. 
+                    <br>
+                    Here's ab bit more <b class="green click" onclick="toggleModal()">about me.</b>
+                </p>
+                <div class="social__list">
+                    <a href="https://www.linkedin.com/in/marcus-santos-33a240318/" target="_blank"  class="social__link click">
+                        <i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://github.com/Lee-d0" target="_blank" class="social__link click">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://drive.google.com/file/d/16d_P8rKAktj7pmIswrNR6jjjAQJiY95E/view?usp=sharing"  target="_blank" class="social__link click">
+                        <i class="fas fa-file-pdf"></i>
+                    </a>
+                </div>
+            </div>
+        </header>
+        <a href="#">
+             <button class="mail__btn click" onclick="toggleModal()" >
+            <i class="fas fa-envelope"></i>
+            </button>
+        </a>
+       
+        <a href="#projects" class="scroll">
+            <div class="scroll__icon click"></div> 
+        </a>
+        <div class="modal">
+            <div class="modal__half modal__about">
+                <h3 class="modal__title modal__title--about">Here's a bit about me</h3>
+                <h4 class="modal__sub-title modal__sub-title--about">Frontend Software Engineer</h4>
+                <p class="modal__para">
+                    I'm a 20 year-old American beginner <span class="green">frontend software enginner</span> with strong passion for devloping website that provdies great <span class="green">user experiance.</span>
+                    <br>
+                    I'm working, learning at my best to gain experiance and become a <span class="green">talented</span> and <span class="green">respected</span> frontend developer every day.
+                </p>
+                <div class="modal__laguages">
+                    <figure class="modal__language" class="">
+                     
+                        <img class="modal__language--img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/HTML5_Badge.svg/240px-HTML5_Badge.svg.png" alt="">
+                        <span class="language__name">Html</span>
+                    </figure>
+                    <figure class="modal__language" class="">
+                     
+                        <img class="modal__language--img" src="https://cdn.iconscout.com/icon/free/png-256/css-131-722685.png" alt="">
+                        <span class="language__name">CSS</span>
+                    </figure>
+                    
+                    <figure class="modal__language">
+                     
+                        <img class="modal__language--img" src="https://cdn.iconscout.com/icon/free/png-256/javascript-1-225993.png" alt="">
+                        <span class="language__name">JavaScript</span>
+                    </figure>
+                </div>
+
+            </div>
+            <div class="modal__half modal__contact">
+                    <i class="fas fa-times modal__exit click" onclick="toggleModal()"></i>
+                
+                <h3 class="modal__title modal__title--contact">Let's have a chat</h3>
+                <h4 class="modal__sub-title modal__sub-title--contact">
+                    I am ready to begin my jounery.
+                </h4>
+                <form  id="contact__form" onsubmit="contact(event)">
+                    <div class="form__item">
+                        <label  class="form__item--lable">Name</label>
+                        <input class="input" name="user_name"  type="text" ></input>
+                    </div>
+                    <div class="form__item">
+                        <label  class="form__item--lable">Email</label>
+                        <input class="input" name="user_email"  type="email" ></input>
+                    </div>
+                    <div class="form__item">
+                        <label  class="form__item--lable">Message</label>
+                        <textarea class="input" name="message"  type="text" ></textarea>
+                    </div>
+                    <button id="contact__submit" class="form__submit">
+                        Send it my way
+                    </button>
+                </form>
+                <div class="modal__overlay modal__overlay--loading">
+                    <i class="fas fa-spinner"></i>
+                </div>
+                <div class="modal__overlay modal__overlay--success">
+                    Thanks for the message! Looking for speaking with you soon.
+                </div>
+                
+            </div>
+            
+        </div>
+        <img src="./assests/semi circle.svg" class="shape shape--0">
+        <img src="./assests/circle.svg" class="shape shape--1">
+        <img src="./assests/squiggly.svg" class="shape shape--2">
+        <img src="./assests/circle.svg" class="shape shape--3">
+        <img src="./assests/triangle.svg" class="shape shape--4">
+        <img src="./assests/circle.svg" class="shape shape--5">
+        <img src="./assests/squiggly.svg" class="shape shape--6">
+        <img src="./assests/circle.svg" class="shape shape--7">
+        <img src="./assests/semi circle.svg" class="shape shape--8">
+
+    </section>
+    <section id="projects">
+        <div class="container">
+            <div class="row">
+                <h1 class="section__title"> Here are some of my <span class="green">Projects</span></h1>
+                <ul class="projects__list">
+                    <li class="project">
+                        <div class="project__wrapper">
+                            <img src="/assests/Screenshot_9-7-2024_82941_127.0.0.1.jpeg"  class="project__img" alt="">
+                            <div class="porject__wrapper--bg"></div>
+                            <div class="project__description">
+                                <h3 class="project__description--title">
+                                    Book Website
+                                </h3>
+                                <h4 class="project__descirption--sub-title">
+                                    Html, CSS, JavaScript
+                                </h4>
+                                <p class="project__description--para">This is a responsive book webiste i was tasked to make by taking online classes, this show how i am good a following directions while getting to learn how to make a website.</p>
+                                <div class="project__descirption--link">
+                                    <a href="https://github.com/Lee-d0" target="_blank" class="project__description--link">
+                                        <i class="fab fa-github"></i>
+                                    </a>
+                                    <a href="https://lee-d0.github.io/Projects/" target="_blank"   class="project__description--link">
+                                        <i class="fas fa-link"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="container">
+            <div class="row footer__row">
+
+            
+            <div class="logo__container--2">
+                <h1 class="logo">MS</h1>
+            </div>
+            <div class="footer__social--list">
+                <a href="https://github.com/Lee-d0" class="
+                footer__social--link
+                link__hover-effect
+                link__hover-effect--white
+                " target="_blank">
+                GitHub
+                </a>
+                <a href="https://www.linkedin.com/in/marcus-santos-33a240318/" class="
+                footer__social--link
+                link__hover-effect
+                link__hover-effect--white
+                " target="_blank">
+                LinkedIn
+                </a><a href="#" class="
+                footer__social--link
+                link__hover-effect
+                link__hover-effect--white
+                " onclick="toggleModal()">
+                Contact
+                </a>
+                <a href="https://drive.google.com/file/d/16d_P8rKAktj7pmIswrNR6jjjAQJiY95E/view?usp=sharing" class="
+                footer__social--link
+                link__hover-effect
+                link__hover-effect--white
+                " target="_blank">
+                Resume
+                </a>
+            </div>
+        
+    
+        <div class="footer__copyright">
+            Copyright © 2024 Marcus Santos
+        </div>
+    </div>
+    </footer>
+</body>
+</html>
