@@ -521,7 +521,15 @@ nav{
     font-size: 48px;
     margin-bottom: 60px;
 }
-
+.projects__list{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    width: 100%;
+    
+}
 
 .project__img{
     width: 100%;
